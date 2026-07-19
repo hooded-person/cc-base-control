@@ -40,6 +40,11 @@ local path = shell.path()
 path = path .. ":" .. "/bin"
 shell.setPath(path)
 
+local completion = require"cc.shell.completion"
+local fnv1a_complete = completion.build{
+    { completion.file, many = true }
+}
+
 -- END SET SHELL THINGS OR SMTH
 -- DOWNLOAD FILES FROM UPSTREAM
 
