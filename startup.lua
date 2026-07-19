@@ -34,6 +34,14 @@ local function fnv1a(str)
     return string.format("%08x", hash)
 end
 -- END UTIL FUNCTIONS
+-- SET SHELL THINGS OR SMTH
+
+local path = shell.path()
+path = path .. ":" .. "/bin"
+shell.setPath(path)
+
+-- END SET SHELL THINGS OR SMTH
+-- DOWNLOAD FILES FROM UPSTREAM
 
 print("Downloading from upstream:")
 print(upstream_url)
