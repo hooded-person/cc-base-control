@@ -35,6 +35,9 @@ local function fnv1a(str)
 end
 -- END UTIL FUNCTIONS
 
+print("Downloading from upstream:")
+print(upstream_url)
+
 local config_files = {"config.lon","peripherals.lon","programs.lon"}
 local downloaded = {}
 local all_downloaded = true
@@ -74,14 +77,14 @@ local function install_file(file)
         h.close()
         local local_hash = fnv1a(local_contents)
         if hash ~= local_contents then
-            return false, "Local contents was changed (hash does not match .hash file)"
+            return false, "Local contents changed (hashes dont match)"
         end
     end
     -- download file
     local url = upstream_url .. file
     local ok, contents = downloadFile(url)
     if not ok then
-        return false, ("'%s' could not be downloaded"):format(file)
+        return false, "Download failed"
     end
     local h = fs.open(file, "w")
     h.write(contents)
@@ -98,6 +101,6 @@ end
 for file in file_list:gmatch("[^\n]+") do
     local ok, err = install_file(file)
     if not ok then
-        print(err)
+        print(file .. ": " ..err)
     end
 end
