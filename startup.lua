@@ -65,7 +65,7 @@ if not ok then error("ahh") end -- TODO: handle this normally
 
 local function install_file(file)
     -- check if locally modified
-    if fs.exist(file..".hash") then
+    if fs.exists(file..".hash") then
         local h = fs.open(file..".hash", "r")
         local hash = h.readAll()
         h.close()
