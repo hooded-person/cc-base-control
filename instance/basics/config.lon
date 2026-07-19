@@ -1,0 +1,14 @@
+---@diagnostic disable
+{
+    owner = "HoodedKingGreen",
+    auto_restart = {
+        delay = 5,
+        retries = 5,
+        timespan = 5, -- minutes
+    },
+    auto_migrate = true,
+    exists_handle_method = "overwrite", -- overwrite,skip
+    channels = {
+        control = 302,
+    },
+}

@@ -1,0 +1,50 @@
+{
+    main = {
+        drive_main = "drive_2",
+        drive_assets = "drive_3",
+    },
+    server_room = {
+        player_detector = "playerDetector_0",
+    },
+    computer_room = {
+        center = {
+            computer71 = "computer_22",
+            drive = "drive_1",
+            speaker = "speaker_1",
+            printer = "printer_1",
+        },
+        front = {
+            monitor_left = "monitor_11",
+            monitor_center = "monitor_10",
+            monitor_right = "monitor_12",
+        },
+        left = {
+            monitor_top_right = "monitor_14",
+            monitor_bottom_right = "monitor_15",
+            monitor_bottom_left = "monitor_16",
+            monitor_top_left = "monitor_13",
+        },
+        right = {
+            monitor_left = "monitor_17",
+            monitor_bottom_right = "monitor_18",
+            monitor_top_right = "monitor_19",
+        },
+    },
+    workshop = {
+        assembly_line = {
+            barrel_input = "minecraft:barrel_2",
+            barrel_output = "minecraft:barrel_3",
+            fluid_tank = "create:fluid_tank_0",
+            monitor_tank_contents = "monitor_8",
+        },
+        screens = {
+            monitor_wide = "monitor_9",
+            monitor_graph = "monitor_20",
+        },
+    },
+    logistics = {
+        stockticker = "Create_StockTicker_0",
+        drawers = "storagedrawers:controller_slave_1",
+        bulk = { "create_connected:item_silo_0" },
+    },
+}

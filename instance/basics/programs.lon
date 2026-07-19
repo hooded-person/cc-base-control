@@ -1,0 +1,36 @@
+{
+    prog_telem = {
+        cycleDelay = 1, -- sec/cycle
+        graphs = {
+            ["minecraft:iron_ingot"] = {
+                monitor = "$.peripherals.computer_room.left.monitor_top_right",
+                maxEntries = "60/$.data.prog_telem.cycleDelay", -- amount of cycles in 60 sec
+            },
+            total = {
+                monitor = "$.peripherals.computer_room.front.monitor_center",
+                maxEntries = "3600/$.data.prog_telem.cycleDelay", -- amount of cycles in 3600 sec (1 hour)
+            }
+        },
+        deltaWindowSize = 50, -- cycles
+        monitor_counts = "$.peripherals.computer_room.front.monitor_left",
+        rates_interval = "m",
+        pinned_rates = {
+            "logistics:minecraft:iron_ingot",
+        },
+    },
+    prog_tracker = {
+        monitor = "$.peripherals.computer_room.right.monitor_top_right",
+    },
+    prog_detector = {
+        logfile = "/logs/players.log",
+        subscribed = "$.owner",
+        excluded = { "$.owner" },
+        -- TODO: implement areas via config instead of the layers definition in detector.lua
+    },
+    run_defrag = {
+        interval = 60, -- minutes
+    },
+    prog_remote_link = {
+        monitor = "$.peripherals.computer_room.right.monitor_bottom_right",
+    },
+}
