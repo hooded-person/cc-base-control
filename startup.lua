@@ -76,7 +76,7 @@ local function install_file(file)
         local local_contents = h.readAll()
         h.close()
         local local_hash = fnv1a(local_contents)
-        if hash ~= local_contents then
+        if hash ~= local_hash then
             return false, "Local contents changed (hashes dont match)"
         end
     end
