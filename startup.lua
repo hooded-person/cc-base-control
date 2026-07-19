@@ -44,6 +44,7 @@ local completion = require"cc.shell.completion"
 local fnv1a_complete = completion.build{
     { completion.file, many = true }
 }
+shell.setCompletionFunction("bin/fnv1a.lua", fnv1a_complete)
 
 -- END SET SHELL THINGS OR SMTH
 -- DOWNLOAD FILES FROM UPSTREAM
